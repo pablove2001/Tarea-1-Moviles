@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-bool btn1 = false;
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool btn1 = false;
+  bool btn2 = false;
+  bool btn3 = false;
+  bool btn4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,22 +69,32 @@ class MyApp extends StatelessWidget {
                     color: btn1 ? Colors.indigo : Colors.black,
                     onPressed: () {
                       btn1 = !btn1;
-                      print('btn1 $btn1');
+                      setState(() {});
                     },
                   ),
                   IconButton(
                     icon: Icon(Icons.timer),
-                    color: Colors.black,
-                    onPressed: () {},
+                    color: btn2 ? Colors.indigo : Colors.black,
+                    onPressed: () {
+                      btn2 = !btn2;
+                      setState(() {});
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.phone_android),
-                    onPressed: () {},
+                    color: btn3 ? Colors.indigo : Colors.black,
+                    onPressed: () {
+                      btn3 = !btn3;
+                      setState(() {});
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.phone_iphone),
-                    color: Colors.black,
-                    onPressed: () {},
+                    color: btn4 ? Colors.indigo : Colors.black,
+                    onPressed: () {
+                      btn4 = !btn4;
+                      setState(() {});
+                    },
                   ),
                 ],
               ),
